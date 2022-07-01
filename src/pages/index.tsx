@@ -1,74 +1,139 @@
-import * as React from 'react';
-
 import Layout from '@/components/layout/Layout';
-import ArrowLink from '@/components/links/ArrowLink';
-import ButtonLink from '@/components/links/ButtonLink';
-import UnderlineLink from '@/components/links/UnderlineLink';
-import UnstyledLink from '@/components/links/UnstyledLink';
 import Seo from '@/components/Seo';
-
-/**
- * SVGR Support
- * Caveat: No React Props Type.
- *
- * You can override the next-env if the type is important to you
- * @see https://stackoverflow.com/questions/68103844/how-to-override-next-js-svg-module-declaration
- */
-import Vercel from '~/svg/Vercel.svg';
-
-// !STARTERCONF -> Select !STARTERCONF and CMD + SHIFT + F
-// Before you begin editing, follow all comments with `STARTERCONF`,
-// to customize the default configuration.
+import Link from 'next/link';
 
 export default function HomePage() {
+  const alphabet = [
+    ['А а', 'a'],
+    ['Б б', 'be'],
+    ['В в', 've'],
+    ['Г г', 'ge'],
+    ['Д д', 'de'],
+    ['Е е', 'je'],
+    ['Ё ё', 'jo'],
+    ['Ж ж', 'že'],
+    ['З з', 'ze'],
+    ['И и', 'i'],
+    ['Й й', 'j'],
+    ['К к', 'ka'],
+    ['Л л', 'el'],
+    ['М м', 'em'],
+    ['Н н', 'en'],
+    ['О о', 'o'],
+    ['П п', 'pe'],
+    ['Р р', 'er'],
+    ['С с', 'es'],
+    ['Т т', 'te'],
+    ['У у', 'u'],
+    ['Ф ф', 'f'],
+    ['Х х', 'cha'],
+    ['Ц ц', 'ce'],
+    ['Ч ч', 'če'],
+    ['Ш ш', 'ša'],
+    ['Щ щ', 'šč'],
+    ['Ъ ъ', 'tvrdý znak'],
+    ['Ы ы', 'y'],
+    ['Ь ь', 'měkký znak'],
+    ['Э э', 'e'],
+    ['Ю ю', 'ju'],
+    ['Я я', 'ja'],
+  ];
+
   return (
     <Layout>
-      {/* <Seo templateTitle='Home' /> */}
       <Seo />
 
       <main>
         <section className='bg-white'>
-          <div className='layout flex min-h-screen flex-col items-center justify-center text-center'>
-            <Vercel className='text-5xl' />
-            <h1 className='mt-4'>
-              Next.js + Tailwind CSS + TypeScript Starter
-            </h1>
-            <p className='mt-2 text-sm text-gray-800'>
-              A starter for Next.js, Tailwind CSS, and TypeScript with Absolute
-              Import, Seo, Link component, pre-configured with Husky{' '}
-            </p>
-            <p className='mt-2 text-sm text-gray-700'>
-              <ArrowLink href='https://github.com/theodorusclarence/ts-nextjs-tailwind-starter'>
-                See the repository
-              </ArrowLink>
-            </p>
-
-            <ButtonLink className='mt-6' href='/components' variant='light'>
-              See all components
-            </ButtonLink>
-
-            <UnstyledLink
-              href='https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Ftheodorusclarence%2Fts-nextjs-tailwind-starter'
-              className='mt-4'
-            >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                width='92'
-                height='32'
-                src='https://vercel.com/button'
-                alt='Deploy with Vercel'
-              />
-            </UnstyledLink>
-
-            <footer className='absolute bottom-2 text-gray-700'>
-              © {new Date().getFullYear()} By{' '}
-              <UnderlineLink href='https://theodorusclarence.com?ref=tsnextstarter'>
-                Theodorus Clarence
-              </UnderlineLink>
-            </footer>
+          <div className='layout flex min-h-screen flex-col items-center space-y-8 text-center'>
+            <h1>Procvičování azbuky</h1>
+            <Link href='/vyslovnost'>
+              <a
+                href=''
+                className='w-60 rounded-xl bg-gray-100 py-6 px-8 transition-colors hover:bg-gray-200'
+              >
+                Procvičení výslovnosti
+              </a>
+            </Link>
+            <Link href='/pismena'>
+              <a
+                href=''
+                className='w-60 rounded-xl bg-gray-100 py-6 px-8 transition-colors hover:bg-gray-200'
+              >
+                Procvičení písmen
+              </a>
+            </Link>
+            <div>
+              <div className='flex h-8 w-96'>
+                <div className='flex w-full items-center justify-center border-r-2 border-l-2 border-t-2 border-b font-semibold'>
+                  Písmeno
+                </div>
+                <div className='flex w-full items-center justify-center border-t-2 border-r-2 border-l border-b font-semibold'>
+                  Výslovnost
+                </div>
+              </div>
+              {alphabet.map(([letter, sound], index, { length }) => (
+                <div className='flex h-8 w-96'>
+                  <div
+                    className={`flex w-full items-center justify-center ${
+                      index == length - 1
+                        ? 'border'
+                        : 'border-l border-t border-r'
+                    }`}
+                  >
+                    {letter}
+                  </div>
+                  <div
+                    className={`flex w-full items-center justify-center ${
+                      index == length - 1
+                        ? 'border-t border-r border-b'
+                        : 'border-t border-r'
+                    }`}
+                  >
+                    {sound}
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
       </main>
     </Layout>
   );
+}
+{
+  /* 
+['А а', 'a'],
+  ['Б б', 'be'],
+  ['В в', 've'],
+  ['Г г', 'ge'],
+  ['Д д', 'de'],
+  ['Е е', 'je'],
+  ['Ё ё', 'jo'],
+  ['Ж ж', 'že'],
+  ['З з', 'ze'],
+  ['И и', 'i'],
+  ['Й й', 'j'],
+  ['К к', 'ka'],
+  ['Л л', 'el'],
+  ['М м', 'em'],
+  ['Н н', 'en'],
+  ['О о', 'o'],
+  ['П п', 'pe'],
+  ['Р р', 'er'],
+  ['С с', 'es'],
+  ['Т т', 'te'],
+  ['У у', 'u'],
+  ['Ф ф', 'f'],
+  ['Х х', 'cha'],
+  ['Ц ц', 'ce'],
+  ['Ч ч', 'če'],
+  ['Ш ш', 'ša'],
+  ['Щ щ', 'šč'],
+  ['Ъ ъ', 'tvrdý znak'],
+  ['Ы ы', 'y'],
+  ['Ь ь', 'měkký znak'],
+  ['Э э', 'e'],
+  ['Ю ю', 'ju'],
+  ['Я я', 'ja']; */
 }
