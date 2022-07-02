@@ -5,6 +5,7 @@ import Seo from '@/components/Seo';
 import Task from '@/components/Task';
 import Answer from '@/components/Answer';
 import Help from '@/components/Help';
+import Link from 'next/link';
 
 export default function HomePage() {
   const [answer, setAnswer] = useState('');
@@ -16,7 +17,7 @@ export default function HomePage() {
 
   return (
     <Layout>
-      <Seo templateTitle='Azbuka - výslovnost' />
+      <Seo templateTitle='Azbuka - písmena' />
 
       <main>
         <section className='bg-white'>
@@ -47,6 +48,14 @@ export default function HomePage() {
               <p>Použité nápovědy: {hintCount}</p>
             </div>
           </div>
+          <Link href='/'>
+            <a
+              href='/'
+              className='absolute top-5 left-5 transition-colors hover:text-gray-600'
+            >
+              Zpátky na hlavní stránku
+            </a>
+          </Link>
         </section>
       </main>
     </Layout>

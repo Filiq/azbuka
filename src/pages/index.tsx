@@ -49,7 +49,7 @@ export default function HomePage() {
             <h1>Procvičování azbuky</h1>
             <Link href='/vyslovnost'>
               <a
-                href=''
+                href='/vyslovnost'
                 className='w-60 rounded-xl bg-gray-100 py-6 px-8 transition-colors hover:bg-gray-200'
               >
                 Procvičení výslovnosti
@@ -57,7 +57,7 @@ export default function HomePage() {
             </Link>
             <Link href='/pismena'>
               <a
-                href=''
+                href='/pismena'
                 className='w-60 rounded-xl bg-gray-100 py-6 px-8 transition-colors hover:bg-gray-200'
               >
                 Procvičení písmen
