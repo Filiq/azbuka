@@ -48,20 +48,14 @@ export default function HomePage() {
           <div className='layout flex min-h-screen flex-col items-center space-y-8 text-center'>
             <h1>Procvičování azbuky</h1>
             <Link href='/vyslovnost'>
-              <a
-                href='/vyslovnost'
-                className='w-60 rounded-xl bg-gray-100 py-6 px-8 transition-colors hover:bg-gray-200'
-              >
+              <button className='w-60 rounded-xl bg-gray-100 py-6 px-8 transition-colors hover:bg-gray-200'>
                 Procvičení výslovnosti
-              </a>
+              </button>
             </Link>
             <Link href='/pismena'>
-              <a
-                href='/pismena'
-                className='w-60 rounded-xl bg-gray-100 py-6 px-8 transition-colors hover:bg-gray-200'
-              >
+              <button className='w-60 rounded-xl bg-gray-100 py-6 px-8 transition-colors hover:bg-gray-200'>
                 Procvičení písmen
-              </a>
+              </button>
             </Link>
             <div>
               <div className='flex h-8 w-96'>
