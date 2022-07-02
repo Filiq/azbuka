@@ -50,7 +50,7 @@ export default function HomePage() {
           </div>
           <Link href='/'>
             <a
-              href='/'
+              href=''
               className='absolute top-5 left-5 transition-colors hover:text-gray-600'
             >
               Zpátky na hlavní stránku
