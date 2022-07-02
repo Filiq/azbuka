@@ -101,7 +101,7 @@ export default function Task({
 }
 
 function shuffle(array: any[]) {
-  var m = array.length,
+   let m = array.length,
     t,
     i;
 

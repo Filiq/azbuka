@@ -73,7 +73,7 @@ export default function HomePage() {
                 </div>
               </div>
               {alphabet.map(([letter, sound], index, { length }) => (
-                <div className='flex h-8 w-96'>
+                <div className='flex h-8 w-96' key={index}>
                   <div
                     className={`flex w-full items-center justify-center ${
                       index == length - 1
