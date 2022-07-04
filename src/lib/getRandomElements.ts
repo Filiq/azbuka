@@ -11,7 +11,7 @@ export default function getRandomElements(
   if (n > len)
     throw new RangeError('getRandom: more elements taken than available');
   while (n--) {
-    let x = Math.floor(Math.random() * len); //randpm index
+    const x = Math.floor(Math.random() * len); //randpm index
 
     if (arr[x][indexOfInnerArr] === exclude) {
       n++;
