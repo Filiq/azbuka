@@ -11,7 +11,7 @@ export default function Answer({
         type='text'
         className='h-full w-full text-center text-6xl'
         value={answer}
-        onChange={(e) => setAnswer(e.target.value.trim())}
+        onChange={(e) => setAnswer(e.target.value)}
       />
     </div>
   );
