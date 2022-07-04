@@ -4,19 +4,16 @@ export default function getRandomElements(
   exclude: any,
   indexOfInnerArr: number
 ) {
-  let result = new Array(n),
-    len = arr.length,
+  let len = arr.length;
+
+  const result = new Array(n),
     taken = new Array(len);
   if (n > len)
     throw new RangeError('getRandom: more elements taken than available');
   while (n--) {
-    var x = Math.floor(Math.random() * len); //randpm index
+    let x = Math.floor(Math.random() * len); //randpm index
 
     if (arr[x][indexOfInnerArr] === exclude) {
-      console.log(arr);
-      console.log(arr[x][indexOfInnerArr]);
-      console.log(exclude);
-
       n++;
       continue;
     }
