@@ -1,5 +1,5 @@
 export default function getRandomElements(arr, n, exclude, indexOfInnerArr) {
-  var result = new Array(n),
+  let result = new Array(n),
     len = arr.length,
     taken = new Array(len);
   if (n > len)
