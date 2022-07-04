@@ -1,4 +1,9 @@
-export default function getRandomElements(arr, n, exclude, indexOfInnerArr) {
+export default function getRandomElements(
+  arr: any[],
+  n: number,
+  exclude: any,
+  indexOfInnerArr: number
+) {
   let result = new Array(n),
     len = arr.length,
     taken = new Array(len);
